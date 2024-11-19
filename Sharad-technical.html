@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sharad Varshney - GenAI Leader Resume</title>
+    <style>
+      :root {
+        --bg-dark: #0c1116;
+        --bg-panel: #151c23;
+        --neon-cyan: #00fff2;
+        --neon-orange: #ff3d00;
+        --warning-yellow: #ffd60a;
+        --text-primary: #e6e6e6;
+        --text-secondary: #8b949e;
+        --card-bg: #1c2632;
+        --card-border: rgba(23, 36, 35, 0.1);
+        --gradient: linear-gradient(
+          135deg,
+          var(--neon-cyan),
+          var(--neon-orange)
+        );
+        --separator: rgba(0, 255, 242, 0.2);
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: var(--text-primary);
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-dark);
+      }
+
+      .layout {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        width: 250px;
+        background-color: var(--bg-panel);
+        padding: 2rem;
+        position: fixed;
+        height: 100vh;
+        overflow-y: auto;
+        border-right: 2px solid var(--separator);
+        box-shadow: 5px 0 15px rgba(0, 255, 242, 0.1);
+      }
+
+      .main-content {
+        margin-left: 300px;
+        flex-grow: 1;
+        padding: 2rem;
+        background-color: var(--bg-dark);
+        position: relative;
+      }
+
+      .main-content::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background: var(--gradient);
+        opacity: 0.5;
+      }
+
+      .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto 2rem;
+        display: block;
+        border: 3px solid var(--neon-cyan);
+        padding: 3px;
+        box-shadow: 0 0 15px rgba(0, 255, 242, 0.3);
+      }
+
+      .metric-card {
+        background: var(--card-bg);
+        padding: 1rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        border: 1px solid var(--card-border);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .metric-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--neon-cyan);
+        opacity: 0.8;
+      }
+
+      .metric-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 255, 242, 0.2);
+        border-color: var(--neon-cyan);
+      }
+
+      .metric-value {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--neon-cyan);
+        margin-bottom: 0.5rem;
+        text-shadow: 0 0 10px rgba(0, 255, 242, 0.3);
+      }
+
+      .metric-label {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .header {
+        margin-bottom: 0.1rem;
+        /* padding-bottom: 1rem;
+        border-bottom: 1px solid var(--separator); */
+      }
+
+      .header h1 {
+        font-size: 3rem;
+        margin: 0;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 20px rgba(0, 255, 242, 0.2);
+      }
+
+      .section-title {
+        color: var(--neon-cyan);
+        border-bottom: 2px solid var(--neon-orange);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        text-shadow: 0 0 10px rgba(0, 255, 242, 0.2);
+      }
+
+      .job {
+        background: var(--card-bg);
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--neon-cyan);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .job::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 255, 242, 0.03)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .job:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(0, 255, 242, 0.1);
+      }
+
+      .job:hover::after {
+        opacity: 1;
+      }
+
+      .job-title {
+        color: var(--neon-orange);
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .skill-tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.3rem;
+        background: var(--card-bg);
+        border-radius: 20px;
+        border: 1px solid var(--neon-cyan);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .skill-tag:hover {
+        background: var(--neon-cyan);
+        color: var(--bg-dark);
+        box-shadow: 0 0 15px rgba(0, 255, 242, 0.3);
+      }
+
+      li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      li:before {
+        content: "›";
+        color: var(--neon-orange);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+
+      @media (max-width: 1024px) {
+        .layout {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+          height: auto;
+          position: relative;
+        }
+        .main-content {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <div class="sidebar">
+        <img src="images/sharad2.png" alt="Profile" class="profile-image" />
+        <div><span>Hands-on GenAI Leader</span></div>
+        <div class="metric-card">
+          <div class="metric-value">18+</div>
+          <div class="metric-label">Years of Industry Experience</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">Fine tuned llama3.2</div>
+          <div class="metric-label">
+            80M+ Revenue Generated in Epsilon with GenAI
+          </div>
+        </div>
+
+        <div class="key-skills">
+          <h3 class="section-title">KEY SKILLS</h3>
+          <div class="skill-tag">Agentic Workflows</div>
+          <div class="skill-tag">AI/ML Innovation</div>
+          <div class="skill-tag">Strategic Leadership</div>
+          <div class="skill-tag">Team Building</div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="header">
+          <h1>SHARAD VARSHNEY</h1>
+          <p>Hands-on GenAI Leader</p>
+          <p>🇺🇸 US Citizen | 📱 650-666-7984</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">EXECUTIVE PROFILE</h2>
+          <p>
+            Research and results-driven, hands-on influential leader with more
+            than 18+ years of experience in GenAI and NLP and large language
+            models. Sharad has unique cross domain experience who drives growth
+            by driving insights that fuel increased profitability and strategic
+            transformations. Skilled at building and leading high-performing
+            technical research teams across international markets, while
+            establishing robust engineering practices and fostering key business
+            partnerships.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">CAREER HIGHLIGHTS</h2>
+
+          <div class="job">
+            <div class="job-title">Principal ML Engineer</div>
+            <div class="job-company">
+              Worf AI, Santa Clara, CA | 2024 - Present
+            </div>
+            <ul>
+              <li>
+                Spearheaded development of revolutionary multi-agent AI
+                architecture, positioning company as an innovator in autonomous
+                cybersecurity
+              </li>
+              <li>
+                Built strategic partnerships with key industry players,
+                establishing company's market presence
+              </li>
+              <li>
+                Architected scalable platform processing millions of threat
+                vectors daily
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-title">
+              CHIEF DATA SCIENTIST | GLOBAL HEAD OF AI/ML | VP
+            </div>
+            <div class="job-company">Epsilon (Cosmos.ai) | 2019 - 2023</div>
+            <ul>
+              <li>
+                Scaled organization from startup to 80+ member global team,
+                driving successful acquisition by Epsilon
+              </li>
+              <li>
+                Transformed customer engagement platform through AI innovation,
+                resulting in 40% improvement in campaign performance
+              </li>
+              <li>
+                Delivered $100M+ in new revenue through AI-driven product
+                innovations
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-title">FOUNDING ML ENGINEER</div>
+            <div class="job-company">Peritus.ai | 2017 - 2019</div>
+            <ul>
+              <li>Led technical vision resulting in successful Seed funding</li>
+              <li>
+                Established strategic partnership program with major cloud
+                providers
+              </li>
+              <li>
+                Developed autonomous data center management platform, reducing
+                incident resolution time by 60%
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">PRIOR EXPERIENCE</h2>
+          <ul>
+            <li>Technical Co- Founder | GEENI.ai | 2012 – 2013</li>
+            <li>Principal Engineer| GTS, San Francisco | 2009 – 2012</li>
+            <li>Sr. Software Engineer | Getty Images, Seattle | 2006 – 2008</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">EDUCATION & CREDENTIALS</h2>
+          <ul>
+            <li>Applied Machine Learning, Stanford University</li>
+            <li>M.S. in Computer Science, California State University</li>
+            <li>B.Tech. in Computer Science, NMU, India</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
