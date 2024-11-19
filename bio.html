@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sharad Varshney - Bio</title>
+    <style>
+      /* Global Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #f5f5f5;
+      }
+
+      /* Layout */
+      .layout {
+        display: flex;
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        flex: 0 0 300px;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .profile-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        display: block;
+      }
+
+      .metric-card {
+        background: #f8f9fa;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 6px;
+        text-align: center;
+      }
+
+      .metric-value {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2c5282;
+      }
+
+      .metric-label {
+        color: #4a5568;
+        font-size: 0.9rem;
+      }
+
+      .key-skills {
+        margin-top: 2rem;
+      }
+
+      .skill-tag {
+        background: #ebf4ff;
+        color: #2c5282;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        display: inline-block;
+        margin: 0.25rem;
+        font-size: 0.9rem;
+      }
+
+      /* Main Content */
+      .main-content {
+        flex: 1;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        border-bottom: 2px solid #2c5282;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+      }
+
+      .header h1 {
+        margin: 0;
+        color: #2c5282;
+        font-size: 2.5rem;
+      }
+
+      .header h2 {
+        margin: 0.5rem 0 0;
+        font-weight: normal;
+        color: #4a5568;
+        font-size: 1.2rem;
+      }
+
+      .section {
+        margin-bottom: 2rem;
+      }
+
+      .section-title {
+        color: #2c5282;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .expertise-area {
+        margin-bottom: 1.5rem;
+      }
+
+      .expertise-title {
+        font-weight: bold;
+        color: #2c5282;
+        margin-bottom: 0.5rem;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 1.5rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .layout {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          flex: none;
+          width: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <img
+          src="images/sharad2.png"
+          alt="Sharad Varshney"
+          class="profile-image"
+        />
+
+        <div style="text-align: center; margin: 1rem 0">
+          <h3>Hands-on GenAI Leader</h3>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">20+</div>
+          <div class="metric-label">Years of AI/ML Experience</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">LLM Expert</div>
+          <div class="metric-label">Fine-tuning & RAG Architecture</div>
+        </div>
+
+        <div class="key-skills">
+          <h3 class="section-title">KEY SKILLS</h3>
+          <div>
+            <span class="skill-tag">LLM Fine-tuning</span>
+            <span class="skill-tag">Generative AI</span>
+            <span class="skill-tag">MLOps Pipeline</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">AI Architecture</span>
+            <span class="skill-tag">Team Leadership</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="header">
+          <h1>SHARAD VARSHNEY</h1>
+          <h2>
+            AI Architect & Technical Co-founder | 🇺🇸 US Citizen | 📱650-666-7984
+          </h2>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+          <p>
+            A pioneering force in Artificial Intelligence and Machine Learning,
+            with over two decades of transformative experience across diverse
+            industry verticals. Currently leading breakthrough initiatives in
+            GenAI and LLM fine-tuning at Worf, while establishing new paradigms
+            in enterprise AI applications.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">TECHNICAL EXPERTISE</h2>
+          <div class="expertise-area">
+            <div class="expertise-title">Large Language Models</div>
+            <ul>
+              <li>Advanced fine-tuning of Llama2 and Mistral models</li>
+              <li>RAG architecture implementation and optimization</li>
+              <li>Custom model architecture design for enterprise use cases</li>
+              <li>Production deployment of LLM applications</li>
+            </ul>
+          </div>
+
+          <div class="expertise-area">
+            <div class="expertise-title">AI/ML Leadership</div>
+            <ul>
+              <li>Architected Marketing ML Operating System at Epsilon</li>
+              <li>Led multi-geography AI teams at Intel's AIPG</li>
+              <li>Pioneered autonomous systems for BMW partnership</li>
+              <li>Developed real-time drone image inference systems</li>
+            </ul>
+          </div>
+
+          <div class="expertise-area">
+            <div class="expertise-title">Innovation Impact</div>
+            <ul>
+              <li>Scaled AI startup to successful acquisition by Epsilon</li>
+              <li>Generated $100M+ through AI-driven solutions</li>
+              <li>
+                Reduced incident resolution time by 60% through AI automation
+              </li>
+              <li>Established Global Resource Design Center with Facebook</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">EDUCATION & SPECIALIZATION</h2>
+          <ul>
+            <li>Master's in Computer Science - California State University</li>
+            <li>
+              Deep Learning Specialization - Andrew Ng's Coursera Platform
+            </li>
+            <li>Machine Learning Specialization - Stanford University</li>
+            <li>Bachelor's in Computer Engineering</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">THOUGHT LEADERSHIP</h2>
+          <ul>
+            <li>Keynote speaker at CES 2016 alongside Intel CEO</li>
+            <li>Published research on LLM fine-tuning methodologies</li>
+            <li>Patent holder in AI-driven autonomous systems</li>
+            <li>Regular contributor to AI/ML technology forums</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
